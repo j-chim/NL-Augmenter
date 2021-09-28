@@ -84,10 +84,10 @@ class ButterFingersPerturbation(SentenceOperation):
     def __init__(self, seed=0, max_outputs=1):
         super().__init__(seed, max_outputs=max_outputs)
 
-    def generate(self, sentence: str):
+    def generate(self, sentence: str, prob: float = 0.05):
         perturbed_texts = butter_finger(
             text=sentence,
-            prob=0.05,
+            prob=prob,
             seed=self.seed,
             max_outputs=self.max_outputs,
         )
